@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Play Store</title>
+<meta name="description" content="Play Store Apps">
+<meta name="keywords" content="mod,cracked,play store,apk, ">
+<meta name="author" content="The 0ne and 0nly">
+<meta property="og:title" content="Android Apps on Google Play " />
+<meta property="og:type" content="video.movie" />
+<meta property="og:url" content="https://play.google.com" />
+<meta property="og:image" content="https://playstoree.web.app/favicon.ico" />
+<meta name="og:description" content="Enjoy millions of the latest Android apps, games, music, movies, TV, books, magazines &amp; more. Anytime, anywhere, across your devices.">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="google" value="notranslate">
+<link rel="icon" href="./img/img/favicon.ico" >
+<link rel="stylesheet" href="./index_files/pwa.css">
+<link rel="stylesheet" type="text/css" href="./index_files/style.css?v=5">
+<link rel="stylesheet" href="./index_files/css.css">
+<link href="./style.css" rel="stylesheet">
+<script type="text/javascript" src="./firebase-app.js" ></script>
+<script type="text/javascript" src="./firebase-auth.js" ></script>
+<script type="text/javascript" src="./firebase-database.js" ></script>
+<script type="text/javascript" src="./firebase-storage.js" ></script>
+</head>
+<body>
+<style>
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+}
+.app-comp__mobile-info {
+width: calc(100vw);
+}
+
+.app-comp__mobile-info-item {
+height: 40px;
+}
+
+.loading-body * {
+display: none;
+}
+
+.dots-loader:not(:required) {
+opacity: 1;
+overflow: hidden;
+position: absolute;
+left: 50%;
+top: 50%;
+margin-left: -4px;
+margin-top: -4px;
+text-indent: -9999px;
+display: inline-block;
+width: 8px;
+height: 8px;
+background: transparent;
+border-radius: 100%;
+box-shadow: #f86 -14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+animation: dots-loader 5s infinite ease-in-out;
+transform-origin: 50% 50%;
+transform: scale(1);
+transition: .3s all;
+z-index: 11;
+}
+
+@keyframes dots-loader {
+0% {
+box-shadow: #f86 -14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+8.33% {
+box-shadow: #f86 14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+16.67% {
+box-shadow: #f86 14px 14px 0 7px, #fc6 14px 14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+25% {
+box-shadow: #f86 -14px 14px 0 7px, #fc6 -14px 14px 0 7px, #6d7 -14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+33.33% {
+box-shadow: #f86 -14px -14px 0 7px, #fc6 -14px 14px 0 7px, #6d7 -14px -14px 0 7px, #4ae -14px -14px 0 7px;
+}
+41.67% {
+box-shadow: #f86 14px -14px 0 7px, #fc6 -14px 14px 0 7px, #6d7 -14px -14px 0 7px, #4ae 14px -14px 0 7px;
+}
+50% {
+box-shadow: #f86 14px 14px 0 7px, #fc6 -14px 14px 0 7px, #6d7 -14px -14px 0 7px, #4ae 14px -14px 0 7px;
+}
+58.33% {
+box-shadow: #f86 -14px 14px 0 7px, #fc6 -14px 14px 0 7px, #6d7 -14px -14px 0 7px, #4ae 14px -14px 0 7px;
+}
+66.67% {
+box-shadow: #f86 -14px -14px 0 7px, #fc6 -14px -14px 0 7px, #6d7 -14px -14px 0 7px, #4ae 14px -14px 0 7px;
+}
+75% {
+box-shadow: #f86 14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px -14px 0 7px, #4ae 14px -14px 0 7px;
+}
+83.33% {
+box-shadow: #f86 14px 14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae 14px 14px 0 7px;
+}
+91.67% {
+box-shadow: #f86 -14px 14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+100% {
+box-shadow: #f86 -14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+}
+}
+
+.loaded-dots.dots-loader {
+opacity: 0;
+z-index: -1;
+pointer-events: none;
+transform: scale(0);
+}
+
+.loading-body {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #fff;
+z-index: 10;
+}
+</style>
+</head>
+<style type="text/css">
+#loader{
+height:100%;
+width:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:999999999;
+background:white;
+display:none;
+place-items:center;
+}
+</style>
+<div id="loader" >
+<svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+<stop stop-color="#006548" stop-opacity="0" offset="0%"/>
+<stop stop-color="#006548" stop-opacity=".631" offset="63.146%"/>
+<stop stop-color="#006548" offset="100%"/>
+</linearGradient>
+</defs>
+<g fill="none" fill-rule="evenodd">
+<g transform="translate(1 1)">
+<path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="url(#a)" stroke-width="2">
+<animateTransform
+attributeName="transform"
+type="rotate"
+from="0 18 18"
+to="360 18 18"
+dur="0.9s"
+repeatCount="indefinite" />
+</path>
+<circle fill="#fff" cx="36" cy="18" r="1">
+<animateTransform
+attributeName="transform"
+type="rotate"
+from="0 18 18"
+to="360 18 18"
+dur="0.9s"
+repeatCount="indefinite" />
+</circle>
+</g>
+</g>
+</svg>
+</div>
+<body>
+<div id="_js">
+<div id="__layout">
+<div id="content">
+<div></div>
+<div id="main-container" class="is-not-pwa">
+<main>
+<div class="overlay_loading" style="position: fixed; width: 100%; height: 100%; background: none center center / 50% no-repeat transparent; z-index: 102; display: none;">
+<div class="progress_line_" style="position: fixed; width: 95%; height: 3px; top: 0px; left: 0px; background: rgb(66, 133, 244);">
+<div class="runner_window" style="width: 15px; height: 3px; background: rgba(255, 255, 255, 0.62); margin-left: 20px;"></div>
+</div>
+</div>
+<section class="container">
+<div id="main-frame-container"></div>
+<div style="">
+<section>
+<div md-mode="indeterminate" class="md-progress-bar md-indeterminate md-theme-default" style="display:none;" data-v-6057b18c="">
+<div class="md-progress-bar-track" data-v-6057b18c=""></div>
+<div class="md-progress-bar-fill" data-v-6057b18c=""></div>
+<div class="md-progress-bar-buffer" data-v-6057b18c=""></div>
+</div>
+<div class="app-comp">
+<div class="app-comp__left">
+<div class="app-comp__info-wrapper">
+<div class="app-comp__logo"><img  src="./img/img/icon.png" width="180" id="applogo"  height="180"></div>
+<div class="app-comp__main-info">
+<div class="app-comp__info">
+<div class="app-comp__info-left">
+<div class="app-comp__info-title notranslate" id="appname" >
+ZainCash Agents زين كاش للوكلا
+</div>
+<div class="app-comp__info-subtitle"><span>Zain Cash</span>
+
+</div>
+<div style="display: flex; margin-top: 10px">
+<div class="app-comp__age-rate">18+ </div>
+<div class="app-comp__ad-status">
+</div>
+</div>
+</div>
+<div class="app-comp__right-wrapper">
+<div class="app-comp__choise"><img src="index_files/choise.png" alt="">
+<span helpers-decode="">Editor's Choice</span>
+</div>
+<div class="app-comp__users-rate">
+<div class="star" data-v-2b76e870=""><span data-v-2b76e870=""><img src="./index_files/star-full.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870=""><span data-v-2b76e870=""><img src="./index_files/star-full.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870=""><span data-v-2b76e870=""><img src="./index_files/star-full.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870=""><span data-v-2b76e870=""><img src="./index_files/star-full.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870=""><span data-v-2b76e870=""><img src="./index_files/star-full.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="app-comp__user-num">
+25000 </div>
+<img src="index_files/user.png" alt="">
+</div>
+</div>
+</div>
+<div class="app-comp__mobile-info">
+<div class="app-comp__mobile-info-item">
+<span class="app-comp__mobile-info-rating">
+<span>4.5</span>
+<svg enable-background="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<g fill="none">
+<path d="M0,0h24v24H0V0z"></path>
+<path d="M0,0h24v24H0V0z"></path>
+</g>
+<path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z">
+</path>
+</svg>
+</span>
+<span class="app-comp__mobile-info-subtitle">Rating</span>
+</div>
+<div class="app-comp__mobile-info-item">
+<span class="app-comp__mobile-info-icon">
+<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20">
+<g transform="translate(21.552 22.5) rotate(180)">
+<path transform="translate(7.552 7.652)" d="M.625,0h8.75A.68.68,0,0,1,10,.723a.68.68,0,0,1-.625.723H.625A.68.68,0,0,1,0,.723.68.68,0,0,1,.625,0Z" data-name="Path 288"></path>
+<g transform="translate(17.552 20.797) rotate(180)">
+<path d="M0,0H9.666V9.666H0Z" fill="none" data-name="Path 289"></path>
+<path transform="translate(-4.408 -3.203)" d="M8.752,4.642V11.81L5.536,8.678a.677.677,0,0,0-.936,0,.627.627,0,0,0,0,.9l4.343,4.229a.669.669,0,0,0,.929,0l4.343-4.229a.627.627,0,0,0,0-.9.669.669,0,0,0-.929,0L10.07,11.81V4.642a.659.659,0,0,0-1.318,0Z" data-name="Path 290"></path>
+</g>
+<rect transform="translate(4.552 5.5)" width="16" height="16" rx="2" fill="none" stroke="#000" stroke-width="2" data-name="Rectangle 123"></rect>
+</g>
+</svg>
+</span>
+<span class="app-comp__mobile-info-subtitle" id="appsize" >14M</span>
+</div>
+<div class="app-comp__mobile-info-item">
+<span class="app-comp__mobile-info-icon">
+<div class="app-comp__mobile-info-rate" style="border:0" ><img src="./index_files/every.webp" style="height:15px ;width:15px"  ></div>
+</span>
+<span class="app-comp__mobile-info-subtitle">Everyone</span>
+</div>
+<div class="app-comp__mobile-info-item">
+<span class="app-comp__mobile-info-icon">
+<div class="app-comp__mobile-info-rate" style="border:0px;">100M+</div>
+</span>
+<span class="app-comp__mobile-info-subtitle">Downloads</span>
+</div>
+</div>
+<div class="app-comp__install-wrapper">
+<div class="app-comp__wish-list-add">
+<div class="app-comp__wish-list-img"></div>
+<button class="app-comp__wish-list-button">
+<span></span>
+</button>
+</div>
+<a href="./ZainCash.apk" id="down" ><button type="button" id="install_button" class="app-comp__install-button active greenBtn ;?>" data-size="12.1 MB" style="background-color: rgb(0, 135, 95);">
+Install
+</button></a>
+<div class="loading">
+<div class="progress_container">
+<div class="progress_word">Загрузка ...</div>
+<div class="progress_graph">
+<div class="runner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="gallery">
+<div class="gall_img">
+<img src="./img/img/91.png" id="ss1"  alt="">
+</div>
+<div class="gall_img">
+<img src="./img/img/92.png"  id="ss2"  alt="">
+</div>
+<div class="gall_img">
+<img src="./img/img/93.png" id="ss3"   alt="">
+</div>
+<div class="gall_img">
+<img src="./img/img/94.png" id="ss4"   alt="">
+</div>
+</div>
+<div class="app-description" data-v-4c38fcdc="">
+<div class="app-description__title" data-v-4c38fcdc="">
+About this Application </div>
+<div class="app-description__content" data-v-4c38fcdc="">
+<div class="app-description__expand expand size collapsed" id="text" data-v-4c38fcdc="">
+<p class="app-description__main-content" data-v-4c38fcdc=""  id="des1"  >
+The CIB Mobile Banking app is designed to meet all your banking needs quickly and with ease!
+<br>Now you can access CIB banking services on the go and manage your finances anytime and anywhere!
+<br>
+<br>• Register for Mobile Banking using the method that’s most convenient to you (Account number, passport number, national ID number, debit card number, or credit card number)
+<br>• View account balances, credit cards, deposits, loans, and mutual funds
+<br>• Easily transfer money to anyone, anywhere, and make donations. You can also schedule one-time or recurring transactions
+<br>• Pay and settle your or someone else’s CIB credit card
+<br>• Book a certificate of deposit or time deposit, and open additional accounts
+<br>• Submit new checkbook requests, block lost or stolen credit cards, dispute credit card transactions, subscribe to e-statements, replace your cards, apply for a loan and a credit card, etc.
+<br>• Activate your OTP token
+<br>• Use the currency calculator
+<br>• Find the nearest CIB ATM and branch to you
+<br>• And countless other services designed to make your life and banking experience easier!
+</div>
+<div class="shadow"></div>
+</div>
+<button type="button" data-hide="Less" data-show="More…" class="expand-btn app-comp__install-button active greenBtn colapsed" id="expand-button">More…</button>
+</div>
+
+<div class="line"></div>
+<div class="app-comp__charts">
+<h3 class="app-comp__section-header">Ratings And Reviews</h3>
+<div class="app-comp__charts-wrapper">
+<div class="score" data-v-3bf2ee4c="">
+<div class="score__number" data-v-3bf2ee4c="">
+4.5 </div>
+<div class="score__stars" data-v-3bf2ee4c="">
+<div class="star" data-v-2b76e870="" data-v-3bf2ee4c="">
+<span data-v-2b76e870=""><img src="./index_files/star-full-big-green.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870="" data-v-3bf2ee4c="">
+<span data-v-2b76e870=""><img src="./index_files/star-full-big-green.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870="" data-v-3bf2ee4c="">
+<span data-v-2b76e870=""><img src="./index_files/star-full-big-green.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870="" data-v-3bf2ee4c="">
+<span data-v-2b76e870=""><img src="./index_files/star-full-big-green.png" alt="" data-v-2b76e870=""></span>
+</div>
+<div class="star" data-v-2b76e870="" data-v-3bf2ee4c="">
+<span data-v-2b76e870=""><img src="./index_files/star-full-big.png" alt="" data-v-2b76e870=""></span>
+</div>
+</div>
+<div class="score__all-users" data-v-3bf2ee4c="">
+General<img src="./index_files/user.png" alt="" data-v-3bf2ee4c="">
+</div>
+<div class="score__ratings" data-v-3bf2ee4c="">
+25000 </div>
+</div>
+<div class="chart" data-v-623abd02="">
+<ol class="chart__bars" data-v-623abd02="">
+<li class="chart__bar-container" data-v-623abd02="">
+<span data-v-623abd02="" class="notranslate">5</span>
+<div class="chart__bar" style="width:70%;" data-v-623abd02=""></div>
+<div class="chart__bg" data-v-623abd02=""></div>
+</li>
+<li class="chart__bar-container" data-v-623abd02="">
+<span data-v-623abd02="" class="notranslate">4</span>
+<div class="chart__bar" style="width:60%;" data-v-623abd02=""></div>
+<div class="chart__bg" data-v-623abd02=""></div>
+</li>
+<li class="chart__bar-container" data-v-623abd02="">
+<span data-v-623abd02="" class="notranslate">3</span>
+<div class="chart__bar" style="width:20%;" data-v-623abd02=""></div>
+<div class="chart__bg" data-v-623abd02=""></div>
+</li>
+<li class="chart__bar-container" data-v-623abd02="">
+<span data-v-623abd02="" class="notranslate">2</span>
+<div class="chart__bar" style="width:40%;" data-v-623abd02=""></div>
+<div class="chart__bg" data-v-623abd02=""></div>
+</li>
+<li class="chart__bar-container" data-v-623abd02="">
+<span data-v-623abd02="" class="notranslate">1</span>
+<div class="chart__bar" style="width:10%;" data-v-623abd02=""></div>
+<div class="chart__bg" data-v-623abd02=""></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div data-v-265dd011="" class="testimotials ">
+<div data-v-265dd011="" class="testimotials__comment-info">
+<div data-v-265dd011="" class="testimotials__user-logo"><img data-v-265dd011="" src="./img/avas/2.jpg" class="v-lazy-image" alt="Avatar">
+</div>
+<div data-v-265dd011="" class="testimotials__user-info-wrapper">
+<div data-v-265dd011="" class="testimotials__user-info-top">
+<div data-v-265dd011="" class="testimotials__user-info-left">
+<div data-v-265dd011="" class="testimotials__user-name">
+SteampoweredGold </div>
+<div data-v-265dd011="" class="testimotials__rate-info">
+<div data-v-265dd011="" class="testimotials__date">
+21.11.2023 </div>
+</div>
+</div>
+
+<div data-v-265dd011="" class="testimotials__rate-stars">
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big.png?v1" style="max-width: 12px;"></span>
+</div>
+</div>
+<div data-v-3442737e="" data-v-265dd011="" class="tooltip" style="display:none;">
+<div data-v-265dd011="" data-v-3442737e="" class="testimotials__likes notranslate"><i data-v-265dd011="" data-v-3442737e="" class="material-icons notranslate">thumb_up</i>
+<span class="likes"></span>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__text-ph">
+<div data-v-265dd011="" class="testimotials__text-visible">
+Very good application , don't wait and press the download button, I recommend everyone to try, many people think that this isn't a good app but i recommend it. Thank you for your hard work.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials ">
+<div data-v-265dd011="" class="testimotials__comment-info">
+<div data-v-265dd011="" class="testimotials__user-logo"><img data-v-265dd011="" src="./img/avas/3.jpg" class="v-lazy-image" alt="Avatar">
+</div>
+<div data-v-265dd011="" class="testimotials__user-info-wrapper">
+<div data-v-265dd011="" class="testimotials__user-info-top">
+<div data-v-265dd011="" class="testimotials__user-info-left">
+<div data-v-265dd011="" class="testimotials__user-name">
+Bonduelle </div>
+<div data-v-265dd011="" class="testimotials__rate-info">
+<div data-v-265dd011="" class="testimotials__date">
+18.05.2023 </div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__rate-stars">
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big.png?v1" style="max-width: 12px;"></span>
+</div>
+</div>
+<div data-v-3442737e="" data-v-265dd011="" class="tooltip" style="display:none;">
+<div data-v-265dd011="" data-v-3442737e="" class="testimotials__likes notranslate"><i data-v-265dd011="" data-v-3442737e="" class="material-icons notranslate">thumb_up</i>
+<span class="likes"></span>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__text-ph">
+<div data-v-265dd011="" class="testimotials__text-visible">
+Cool app where you can make good money on and learn many new things for free.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials ">
+<div data-v-265dd011="" class="testimotials__comment-info">
+<div data-v-265dd011="" class="testimotials__user-logo"><img data-v-265dd011="" src="./img/avas/4.jpg" class="v-lazy-image" alt="Avatar">
+</div>
+<div data-v-265dd011="" class="testimotials__user-info-wrapper">
+<div data-v-265dd011="" class="testimotials__user-info-top">
+<div data-v-265dd011="" class="testimotials__user-info-left">
+<div data-v-265dd011="" class="testimotials__user-name">
+Bandifym </div>
+<div data-v-265dd011="" class="testimotials__rate-info">
+<div data-v-265dd011="" class="testimotials__date">
+19.02.2022 </div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__rate-stars">
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big.png?v1" style="max-width: 12px;"></span>
+</div>
+</div>
+<div data-v-3442737e="" data-v-265dd011="" class="tooltip" style="display:none;">
+<div data-v-265dd011="" data-v-3442737e="" class="testimotials__likes notranslate"><i data-v-265dd011="" data-v-3442737e="" class="material-icons notranslate">thumb_up</i>
+<span class="likes"></span>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__text-ph">
+<div data-v-265dd011="" class="testimotials__text-visible">
+ great app I recommend it to everyone , must install this app
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials hidden_comment">
+<div data-v-265dd011="" class="testimotials__comment-info">
+<div data-v-265dd011="" class="testimotials__user-logo"><img data-v-265dd011="" src="./img/avas/5.jpg" class="v-lazy-image" alt="Avatar">
+</div>
+<div data-v-265dd011="" class="testimotials__user-info-wrapper">
+<div data-v-265dd011="" class="testimotials__user-info-top">
+<div data-v-265dd011="" class="testimotials__user-info-left">
+<div data-v-265dd011="" class="testimotials__user-name">
+runewall </div>
+<div data-v-265dd011="" class="testimotials__rate-info">
+<div data-v-265dd011="" class="testimotials__date">
+20.06.2022 </div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__rate-stars">
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+</div>
+<div data-v-3442737e="" data-v-265dd011="" class="tooltip" style="display:none;">
+<div data-v-265dd011="" data-v-3442737e="" class="testimotials__likes notranslate"><i data-v-265dd011="" data-v-3442737e="" class="material-icons notranslate">thumb_up</i>
+<span class="likes"></span>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__text-ph">
+<div data-v-265dd011="" class="testimotials__text-visible">
+Update: App is 100x better than my 1st review years ago. Just wish it didn't cut off photos when posting. For that reason, I still post in FB to show the full photos. 1st review: Application is freezing and video audio keeps getting stuck. The audio continues to loops even after moving from the oringial post. The only way to clear it is to close the app, and when you do that you loose your place in the feed. I checked for an update but my application is current. Thinking about deleting
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials hidden_comment">
+<div data-v-265dd011="" class="testimotials__comment-info">
+<div data-v-265dd011="" class="testimotials__user-logo"><img data-v-265dd011="" src="./img/avas/6.jpg" class="v-lazy-image" alt="Avatar">
+</div>
+<div data-v-265dd011="" class="testimotials__user-info-wrapper">
+<div data-v-265dd011="" class="testimotials__user-info-top">
+<div data-v-265dd011="" class="testimotials__user-info-left">
+<div data-v-265dd011="" class="testimotials__user-name">
+unprovabletruths </div>
+<div data-v-265dd011="" class="testimotials__rate-info">
+<div data-v-265dd011="" class="testimotials__date">
+21.06.2022 </div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__rate-stars">
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+<div data-v-2b76e870="" data-v-265dd011="" class="star">
+<span data-v-2b76e870=""><img data-v-2b76e870="" src="./index_files/star-full-big-green.png?v1" style="max-width: 12px;"></span>
+</div>
+</div>
+<div data-v-3442737e="" data-v-265dd011="" class="tooltip" style="display:none;">
+<div data-v-265dd011="" data-v-3442737e="" class="testimotials__likes notranslate"><i data-v-265dd011="" data-v-3442737e="" class="material-icons notranslate">thumb_up</i>
+<span class="likes"></span>
+</div>
+</div>
+</div>
+<div data-v-265dd011="" class="testimotials__text-ph">
+<div data-v-265dd011="" class="testimotials__text-visible">
+I don't use this app alot but I had a really bad issue with the app not loading. No stories, no timeline, no pages. I was fed up. Finally I just uninstalled the app and reinstalled it. Seems to have worked to fix those issues but seriously it's 2022. Why do we have issues like this, on a SM app that literally is the blandest version it could possibly be? Somehow, someway this app needs to be revamped and morn interesting. I'm not talking about a new filter.
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+#expand-button2 {
+background: none;
+border: none;
+color: green;
+text-align: left;
+}
+
+.testimotials[data-v-265dd011].hidden_comment {
+display: none;
+}
+</style>
+
+<button type="button" data-hide="Hide Reviews" data-show="All reviews" class="expand-btn app-comp__install-button active greenBtn colapsed" id="expand-button2">All Reviews</button>
+
+<div class="line"></div>
+<div class="app-comp__recent-changes app-comp__main-recent-changes">
+<h3 class="app-comp__section-header app-comp__section-header_changes" helpers-decode="">What's the news?</h3>
+<div class="app-comp__recent-changes-wrapper"  id="des2"  >
+Install this amazing and asthonishing app for free entertainment  and fun.
+ </div>
+</div>
+
+<div class="line"></div>
+<div class="app-comp__information">
+<span class="app-comp__section-header">Additional Information</span>
+<div class="info-items" data-v-9c345bd8="">
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Updated On </div>
+<span data-v-9c345bd8="">
+06.06.2023                                                            </span>
+</div>
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Size </div>
+<span data-v-9c345bd8="">3M</span>
+</div>
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Installed </div>
+<span data-v-9c345bd8="">100M+</span>
+</div>
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Current Version</div>
+<span data-v-9c345bd8="">18.12.4</span>
+</div>
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Age </div>
+<span data-v-9c345bd8="">3+</span>
+</div>
+<div class="info-items__item" data-v-9c345bd8="">
+<div class="info-items__title" data-v-9c345bd8="">
+Developer </div>
+<span data-v-9c345bd8="">Google Play</span>
+</div>
+</div>
+</div>
+<div class="line"></div>
+</div>
+</div>
+</section>
+</div>
+</section>
+</main>
+<div class="modal_window">
+<img class="img_close_image" src="index_files/right-arrow.svg" alt="">
+<img class="target_img" src="" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<a style="display: none" href="#" id="r">test</a>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./index_files/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
